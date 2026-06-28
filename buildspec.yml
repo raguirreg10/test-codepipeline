@@ -3,7 +3,7 @@ version: 0.2
 phases:
   install:
     commands:
-      - npm install -g n
+      - n --version
       - n 24.18.0
       - hash -r
       - node --version
