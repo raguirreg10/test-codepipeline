@@ -18,8 +18,9 @@ phases:
 
   post_build:
     commands:
-      - zip -r webapp-dist.zip dist/
+      - zip -r dist/webapp.zip dist
 
 artifacts:
+  base-directory: dist
   files:
     - webapp.zip
