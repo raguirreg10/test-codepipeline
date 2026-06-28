@@ -16,7 +16,10 @@ phases:
       - node --version
       - npm run build
 
+  post_build:
+    commands:
+      - zip -r webapp-dist.zip dist/
+
 artifacts:
-  base-directory: dist
   files:
-    - '**/*'
+    - webapp.zip
