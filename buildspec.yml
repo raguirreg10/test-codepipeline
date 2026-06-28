@@ -3,14 +3,16 @@ version: 0.2
 phases:
   install:
     commands:
-      - curl -fsSL https://deb.nodesource.com/setup_24.x | bash -
-      - apt-get install -y nodejs
+      - npm install -g n
+      - n 24.18.0
+      - hash -r
       - node --version
       - npm --version
       - npm ci
 
   build:
     commands:
+      - hash -r
       - node --version
       - npm run build
 
