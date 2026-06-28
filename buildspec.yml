@@ -1,15 +1,23 @@
-# Spec file
 version: 0.2
 
 phases:
   install:
-    runtime-versions:
-      nodejs: 24
     commands:
+      - curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+      - export NVM_DIR="$HOME/.nvm"
+      - . "$NVM_DIR/nvm.sh"
+      - nvm install 24.18.0
+      - nvm use 24.18.0
+      - node --version
+      - npm --version
       - npm ci
 
   build:
     commands:
+      - export NVM_DIR="$HOME/.nvm"
+      - . "$NVM_DIR/nvm.sh"
+      - nvm use 24.18.0
+      - node --version
       - npm run build
 
 artifacts:
